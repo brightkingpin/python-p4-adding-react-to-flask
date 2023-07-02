@@ -14,6 +14,10 @@ migrate = Migrate(app, db)
 
 db.init_app(app)
 
+@app.route('/', methods=['GET'])
+def root():
+    return "Welcome to the Flask API"
+
 @app.route('/messages', methods=['GET', 'POST'])
 def messages():
     if request.method == 'GET':
